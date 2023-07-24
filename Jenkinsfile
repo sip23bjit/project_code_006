@@ -3,7 +3,6 @@ pipeline {
     tools {
         maven 'MAVEN'
     }
-
     // triggers {
     //     pollSCM 'H/5 * * * *'
     // }
@@ -27,7 +26,7 @@ pipeline {
                         sshTransfer(
                             cleanRemote: false,
                             excludes: '',
-                            execCommand: 'java -jar spark-lms-0.0.1-SNAPSHOT.jar &> /dev/null &',
+                            execCommand: './lms.sh',
                             execTimeout: 120000,
                             flatten: false,
                             makeEmptyDirs: false,
