@@ -26,7 +26,7 @@ pipeline {
                         sshTransfer(
                             cleanRemote: false,
                             excludes: '',
-                            execCommand: './lms.sh',
+                            execCommand: './lms.sh && sudo systemctl restart javarunner.service',
                             execTimeout: 120000,
                             flatten: false,
                             makeEmptyDirs: false,
